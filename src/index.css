@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -32,7 +34,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.375rem; /* Updated from 0.5rem to match PRD rounded-md (0.375rem) */
 
     --sidebar-background: 0 0% 98%;
 
@@ -52,41 +54,41 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 220 41.2% 11.0%; /* PRD: #111827 */
+    --foreground: 220 13.6% 91.0%; /* PRD: #E5E7EB (primaryText) */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 216 28.3% 16.9%; /* PRD: #1F2937 (surface) */
+    --card-foreground: 220 13.6% 91.0%; /* PRD: #E5E7EB (primaryText on surface) */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 216 28.3% 16.9%; /* PRD: #1F2937 (surface for popover) */
+    --popover-foreground: 220 13.6% 91.0%; /* PRD: #E5E7EB (primaryText on popover) */
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 210 40% 98%; /* Kept existing dark, PRD does not specify a separate primary brand color */
+    --primary-foreground: 222.2 47.4% 11.2%; /* Kept existing dark */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%; /* Kept existing dark */
+    --secondary-foreground: 210 40% 98%; /* Kept existing dark */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217.2 32.6% 17.5%; /* Kept existing dark */
+    --muted-foreground: 217.5 13.8% 64.9%; /* PRD: #9CA3AF (secondaryText) */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 44.9 96.1% 56.3%; /* PRD: #FBBF24 (accent) */
+    --accent-foreground: 222.2 47.4% 11.2%; /* Dark text for yellow accent, using existing primary-foreground */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 69.5% 50.6%; /* PRD: #DC2626 (error) */
+    --destructive-foreground: 210 40% 98%; /* Kept existing dark (light text for red bg) */
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 217.1 19.1% 26.7%; /* PRD: #374151 (border) */
+    --input: 217.1 19.1% 26.7%; /* PRD: #374151 (assuming input uses border color) */
+    --ring: 212.7 26.8% 83.9%; /* Kept existing dark */
+    --sidebar-background: 240 5.9% 10%; /* Kept existing dark */
+    --sidebar-foreground: 240 4.8% 95.9%; /* Kept existing dark */
+    --sidebar-primary: 224.3 76.3% 48%; /* Kept existing dark */
+    --sidebar-primary-foreground: 0 0% 100%; /* Kept existing dark */
+    --sidebar-accent: 240 3.7% 15.9%; /* Kept existing dark */
+    --sidebar-accent-foreground: 240 4.8% 95.9%; /* Kept existing dark */
+    --sidebar-border: 240 3.7% 15.9%; /* Kept existing dark */
+    --sidebar-ring: 217.2 91.2% 59.8%; /* Kept existing dark */
   }
 }
 
@@ -96,6 +98,6 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-sm; /* Added text-sm as per PRD body typography */
   }
 }
